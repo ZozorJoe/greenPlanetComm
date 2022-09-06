@@ -1,7 +1,7 @@
 <?php
 require_once("../db/connexion.php");
+require_once("../langues/decide-lan.php");
 $to      = 'info@greenplanetcommunication.com';
-// $to      = 'info@greenplanetcommunication.com';
 if(isset($_POST)) {
 //  var_dump($_POST);
 $msg="";
@@ -14,15 +14,15 @@ $msg="";
     $subject=$_POST['subject'];
  }
  else{
-    $subject = 'Contact sur Creen Planet par '.$Nom;
+    $subject = 'Contact sur Green Planet par '.$Nom;
  }
 $message =' 
 <html> 
 <head> 
-    <title>Welcome to CodexWorld</title> 
+    <title>.$lang[mail-head].</title> 
 </head> 
 <body> 
-    <h1>Votre message par de '.$Nom.'</h1> </br>
+    <h1>Votre message de '.$Nom.'</h1> </br>
     <span> email:'.$email.'</span></br>
     <p>'.$description.'</p>
    
@@ -42,7 +42,7 @@ $headers .='From:' .$email;
  }
  else{
     $msg = array(
-        'msg' => 'votre contact pas envoyer'
+        'msg' => 'Message non-envoyé!'
     );
  }
  
