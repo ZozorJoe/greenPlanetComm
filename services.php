@@ -84,7 +84,47 @@ https://templatemo.com/tm-545-finance-business
     <!-- ***** Preloader End ***** -->
 
 
+    <!-- include sub header layout -->
     <?php include 'layout/header.php'; ?>
+
+    <!-- header -->
+    <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a href="index.php" class="d-lg-none"><img src="assets/images/logo-w.png" alt="logo" width="40" height="40" style="margin-left: 20px; margin-top: 5px;"></a>
+          <a class="navbar-brand d-none d-lg-block" href="index.php"><h2>Green Planet Communication</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><?php echo $lang["nav-home"]; ?>
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.php"><?php echo $lang["nav-about"]; ?></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="services.php"><?php echo $lang["nav-service"]; ?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php"><?php echo $lang["nav-contact"]; ?></a>
+              </li>
+			  <li class="nav-item dropdown">
+				 <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $lang["lang-btn"]; ?></a>
+				 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<li><a class="dropdown-item" href="services.php?lang=fr"><?php echo $lang["lang-fr"]; ?></a></li>
+					<li><a class="dropdown-item" href="services.php?lang=en"><?php echo $lang["lang-ang"]; ?></a></li>
+					<li><a class="dropdown-item" href="services.php?lang=es"><?php echo $lang["lang-es"]; ?></a></li>
+				 </ul>
+			  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
 
     <!-- Page Content -->
@@ -197,98 +237,7 @@ https://templatemo.com/tm-545-finance-business
 
 
 
-    <!-- Callback -->
-
-    <div class="callback-form callback-services">
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-md-12">
-
-            <div class="section-heading">
-
-              <h2><?php echo $lang["callback-h2"]; ?><em><?php echo $lang["callback-h2-em"]; ?></em></h2>
-
-              <span><?php echo $lang["callback-span"]; ?></span>
-
-            </div>
-
-          </div>
-
-          <div class="col-md-12">
-
-            <div class="contact-form">
-
-              <div id="contact" >
-              <div id="message_notification"></div>
-
-                <div class="row">
-
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-
-                    <fieldset>
-
-                      <input name="nomComplete" type="text" class="form-control" id="name" placeholder="<?php echo $lang["callback-nom"]; ?>" required>
-
-                    </fieldset>
-
-                  </div>
-
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-
-                    <fieldset>
-
-                      <input name="adresse_email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="<?php echo $lang["callback-mail"]; ?>" required>
-
-                    </fieldset>
-
-                  </div>
-
-                  <div class="col-lg-4 col-md-12 col-sm-12">
-
-                    <fieldset>
-
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="<?php echo $lang["callback-subject"]; ?>" required>
-
-                    </fieldset>
-
-                  </div>
-
-                  <div class="col-lg-12">
-
-                    <fieldset>
-
-                      <textarea name="message" rows="6" class="form-control" id="message1" placeholder="<?php echo $lang["callback-msg"]; ?>" required></textarea>
-
-                    </fieldset>
-
-                  </div>
-
-                  <div class="col-lg-12">
-
-                    <fieldset>
-
-                      <button type="submit" id="form-submit" class="border-button form_submit_message"><?php echo $lang["callback-btn"]; ?></button>
-
-                    </fieldset>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <?php include 'layout/callback.php' ?>
 
 
 

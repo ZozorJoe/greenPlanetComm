@@ -1,7 +1,8 @@
 <?php
 require_once("../db/connexion.php");
 require_once("../langues/decide-lan.php");
-$to      = 'info@greenplanetcommunication.com';
+$to      = 'masycharlar@gmail.com';
+//$to      = 'info@greenplanetcommunication.com';
 if(isset($_POST)) {
 //  var_dump($_POST);
 $msg="";

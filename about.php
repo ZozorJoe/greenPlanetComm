@@ -88,8 +88,49 @@ https://templatemo.com/tm-545-finance-business
 
 
 
-  <!-- Header -->
+
+  <!-- sub header layout include -->
   <?php include 'layout/header.php'; ?>
+
+
+  <!-- Header -->
+  <header class="">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a href="index.php" class="d-lg-none"><img src="assets/images/logo-w.png" alt="logo" width="40" height="40" style="margin-left: 20px; margin-top: 5px;"></a>
+          <a class="navbar-brand d-none d-lg-block" href="index.php"><h2>Green Planet Communication</h2></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.php"><?php echo $lang["nav-home"]; ?>
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.php"><?php echo $lang["nav-about"]; ?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.php"><?php echo $lang["nav-service"]; ?></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php"><?php echo $lang["nav-contact"]; ?></a>
+              </li>
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $lang["lang-btn"]; ?></a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="about.php?lang=fr"><?php echo $lang["lang-fr"]; ?></a></li>
+                <li><a class="dropdown-item" href="about.php?lang=en"><?php echo $lang["lang-ang"]; ?></a></li>
+                <li><a class="dropdown-item" href="about.php?lang=es"><?php echo $lang["lang-es"]; ?></a></li>
+              </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
   <!-- Page Content -->
 
