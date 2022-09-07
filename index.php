@@ -681,7 +681,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <input name="nomComplete" type="text" class="form-control" id="nom" placeholder=<?php echo $lang['callback-nom']; ?>" required>
+                      <input name="nomComplete" type="text" class="form-control" id="nom-contact" placeholder=<?php echo $lang['callback-nom']; ?>" required>
 
                     </fieldset>
 
@@ -691,7 +691,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <input name="adresse_email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="<?php echo $lang['callback-mail']; ?>" required>
+                      <input name="adresse_email" type="text" class="form-control" id="email-contact" pattern="[^ @]*@[^ @]*" placeholder="<?php echo $lang['callback-mail']; ?>" required>
 
                     </fieldset>
 
@@ -701,7 +701,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="<?php echo $lang['callback-subject']; ?>" required>
+                      <input name="subject" type="text" class="form-control" id="subject-contact" placeholder="<?php echo $lang['callback-subject']; ?>" required>
 
                     </fieldset>
 
@@ -711,7 +711,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <textarea name="message" rows="6" class="form-control" id="messageContact" placeholder="<?php echo $lang['callback-msg']; ?>" required></textarea>
+                      <textarea name="message" rows="6" class="form-control" id="message-Contact" placeholder="<?php echo $lang['callback-msg']; ?>" required></textarea>
 
                     </fieldset>
 
@@ -721,7 +721,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <button  id="form-submit" class="border-button form_submit_message "><?php echo $lang['callback-btn']; ?></button>
+                      <button  id="submit" class="border-button form_submit_message "><?php echo $lang['callback-btn']; ?></button>
 
                     </fieldset>
 

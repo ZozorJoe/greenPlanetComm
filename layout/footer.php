@@ -205,6 +205,7 @@ if(! cleared[t.id]){                      // function makes it static and global
       var data ={
         nom:nom,
         email:email,
+        subject:subject,
         message:message,
         langue:langues
       }
@@ -239,6 +240,7 @@ success: function(response) {
   `);
   $('input[name="nom"]').val(null);
 $('input[name="emailadress"]').val(null);
+$('input[name="subject"]').val(null);
 $("#messageContact").val(null);
 },
 })
