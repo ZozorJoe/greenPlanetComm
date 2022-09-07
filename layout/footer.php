@@ -182,8 +182,9 @@ if(! cleared[t.id]){                      // function makes it static and global
   $(document).ready(function(){
     var input_nom =document.querySelector("#nom")
     var input_email =document.querySelector("#email")
+    var input_subject =document.querySelector("#subject")
     var input_message =document.querySelector("#messageContact")
-      input_nom.addEventListener('input',function () {
+        input_nom.addEventListener('input',function () {
         document.getElementById("notif_nom").style.display = "none";
         })
         input_email.addEventListener('input',function () {
@@ -192,10 +193,11 @@ if(! cleared[t.id]){                      // function makes it static and global
         input_message.addEventListener('input',function () {
         document.getElementById("notif_sms").style.display = "none";
         })
-    $(document).on('click','.contact_envoyer', function(){
+    $(document).on('click','#form-submit', function(){
       console.log('test')
       var nom = $('input[name="nom"]').val();
       var email = $('input[name="emailadress"]').val();
+      var subject = $('input[name="subject"]').val();
       var message = $("#messageContact").val();
       var langues = $('input[name="langue"]').val();
 

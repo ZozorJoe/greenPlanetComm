@@ -681,7 +681,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <input name="nomComplete" type="text" class="form-control" id="name" placeholder=<?php echo $lang['callback-nom']; ?>" required>
+                      <input name="nomComplete" type="text" class="form-control" id="nom" placeholder=<?php echo $lang['callback-nom']; ?>" required>
 
                     </fieldset>
 
@@ -691,7 +691,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <input name="adresse_email" type="text" class="form-control" id="adresse_email" pattern="[^ @]*@[^ @]*" placeholder="<?php echo $lang['callback-mail']; ?>" required>
+                      <input name="adresse_email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="<?php echo $lang['callback-mail']; ?>" required>
 
                     </fieldset>
 
@@ -711,7 +711,7 @@ https://templatemo.com/tm-545-finance-business
 
                     <fieldset>
 
-                      <textarea name="message" rows="6" class="form-control" id="message1" placeholder="<?php echo $lang['callback-msg']; ?>" required></textarea>
+                      <textarea name="message" rows="6" class="form-control" id="messageContact" placeholder="<?php echo $lang['callback-msg']; ?>" required></textarea>
 
                     </fieldset>
 
