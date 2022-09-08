@@ -1,8 +1,7 @@
 <?php
 require_once("../db/connexion.php");
-require_once("../langues/decide-lan.php");
-$to      = 'masycharlar@gmail.com';
-//$to      = 'info@greenplanetcommunication.com';
+$to      = 'info@greenplanetcommunication.com';
+// $to      = 'info@greenplanetcommunication.com';
 if(isset($_POST)) {
 //  var_dump($_POST);
 $msg="";
@@ -15,15 +14,15 @@ $msg="";
     $subject=$_POST['subject'];
  }
  else{
-    $subject = 'Contact sur Green Planet par '.$Nom;
+    $subject = 'Contact sur Creen Planet par '.$Nom;
  }
 $message =' 
 <html> 
 <head> 
-    <title>.$lang[mail-head].</title> 
+    <title>Welcome to CodexWorld</title> 
 </head> 
 <body> 
-    <h1>Votre message de '.$Nom.'</h1> </br>
+    <h1>Votre message par de '.$Nom.'</h1> </br>
     <span> email:'.$email.'</span></br>
     <p>'.$description.'</p>
    
@@ -38,15 +37,15 @@ $headers .='From:' .$email;
  if($pdo_statement->execute( array( ':Nom'=>$Nom, ':email'=>$email,':langues'=>$langues,':date_inscription'=>$date_inscription))){
 // mail($to, $subject, $message, $headers);
     $msg = array(
-        'msg' => 'email a ete bien envoyer'
+        'msg' => 'email a ete bien envoyé'
     );
  }
  else{
     $msg = array(
-        'msg' => 'Message non-envoyé!'
+        'msg' => 'votre contact pas envoyer'
     );
  }
- 
+
  echo json_encode($msg);
 }
 

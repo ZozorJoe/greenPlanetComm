@@ -1,4 +1,8 @@
-<?php include "langues/decide-lan.php"; ?>
+<?php 
+include "langues/decide-lan.php"; 
+
+//require_once "controlleur/callback.php";
+?>
 
 
 

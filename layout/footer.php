@@ -1,4 +1,3 @@
-
 </style>
 <footer>
 
@@ -199,21 +198,21 @@ if(! cleared[t.id]){                      // function makes it static and global
       var message = $("#messageContact").val();
       var langues = $('input[name="langue"]').val();
 
-   
+
       var data ={
         nom:nom,
         email:email,
         message:message,
         langue:langues
       }
-      
+
       if(nom==""){
         $('.notif_name').html(`
    <div class="popover_presonaliser alert alert-danger text-center" id="notif_nom">Entrer votre nom</div>
   `);
 
       }  
-   
+
       else if(email==""){
         $('.notif_mail').html(`
   <div class="popover_presonaliser alert alert-danger text-center" id="notif_email" >Entrer votre mail</div>
@@ -241,11 +240,11 @@ $("#messageContact").val(null);
 },
 })
       }
-      
-     
-    
+
+
+
     })
-    $(document).on('click','.form_submit', function(){
+    $(document).on('click','.form_submit_message', function(){
       console.log('test')
       var nom = $('input[name="nomComplete"]').val();
       var email = $('input[name="adresse_email"]').val();
@@ -282,4 +281,3 @@ success: function(response) {
   </script>
 
 <style>
- 
