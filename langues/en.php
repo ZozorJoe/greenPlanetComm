@@ -2,10 +2,12 @@
 
 $lang = array(
 	// Mail content
-	"mail-title" => "Message",
-	"mail-h1" => "A mail from ",
-	"mail-adress" => "From the mail adress :",
-	"mail-descri" => "Message content",
+	"mail-title" => "Email from:",
+	"mail-h1" => "Contact request via website",
+	"msg-fill-fieds" => "Please complete all fields!",
+	"msg-mail-valid" => "Insert a valid email address!",
+	"msg-sent-success" => "Your email has been sent successfully!",
+	"msg-sent-danger" => "Your email could not be sent!",
 	//French language of home page index.php
 	//============================================================================================================================================================================================================================================================================================================================================================================================================
 	"mail-head" => "Message",

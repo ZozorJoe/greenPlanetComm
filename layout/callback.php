@@ -3,6 +3,7 @@
   //Alerts variables
   $msg = "";
   $msgClass = "";
+  $requestContact = $lang['mail-h1'];
   //checking for the submit 
   if(filter_has_var(INPUT_POST, 'submit-msg')){
     //get the form data
@@ -16,17 +17,41 @@
       //check email
       if(filter_var($adresse_email, FILTER_VALIDATE_EMAIL)){
         //passed
-        $msg = 'Votre mail a bien été envoyé!';
-        $msgClass = 'alert-success';
+        //Send mail variables 
+        // $toEmail = 'info@greenplanetcommunication.com';
+        $toEmail = 'masycharlar@gmail.com';
+        $subject = $message_subject;
+        $mail_from = $lang['mail-title'];
+        $body = '
+          <h2>'.$requestContact.'</h2>
+          <h4>'.$name.'</h4>
+          <h4>'.$adresse_email.'</h4>
+          <h4>'.$message_content.'</h4>
+        ';
+        //headers of the mail
+        $headers = "MIME-Version: 1.0" . "\r\n"; 
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+        //Additionals headers
+        $headers .= $mail_from.' <'.$adresse_email.'> ' . "\r\n" ;
+        //send the mail
+        if(mail($toEmail, $subject, $body, $headers)){
+          //passed
+          $msg = $lang['msg-sent-success'];
+          $msgClass = 'alert-success';
+        } else {
+          //failed
+          $msg = $lang['msg-sent-danger'];
+          $msgClass = 'alert-danger';
+        }
         
       } else {
         //failed 
-        $msg = 'Please, enter a valid email adress!';
+        $msg = $lang['msg-mail-valid'];
         $msgClass = 'alert-danger';
       }
     } else {
       //failed
-      $msg = 'Please, fill all the fields!';
+      $msg = $lang['msg-fill-fieds'];
       $msgClass = 'alert-danger';
     }
   }
@@ -58,7 +83,6 @@
       <?php endif; ?>
 
         <div id="contact">
-        <div id="message_notification"></div>
           <div class="row">
 
             <div class="col-lg-4 col-md-12 col-sm-12">
@@ -68,7 +92,6 @@
                 <input name="nomComplete" type="text" class="form-control" id="nom-contact" placeholder="<?php echo $lang['callback-nom']; ?>" value="<?php echo isset($_POST['nomComplete']) ? $name : ''; ?>">
 
               </fieldset>
-              <div class="nameNotif"></div>
 
             </div>
 
@@ -79,7 +102,6 @@
                 <input name="adresse_email" type="text"  <?php $invalid_class_mail ?? "" ?> class="form-control" id="email-contact" placeholder="<?php echo $lang['callback-mail']; ?>" value="<?php echo isset($_POST['adresse_email']) ? $adresse_email : ''; ?>">
 
               </fieldset>
-              <div class="emailNotif"></div>
 
             </div>
 
@@ -90,7 +112,6 @@
                 <input name="message_subject" type="text" class="form-control" id="subject-contact" placeholder="<?php echo $lang['callback-subject']; ?>" value="<?php echo isset($_POST['message_subject']) ? $message_subject : ''; ?>">
 
               </fieldset>
-              <div class="subjectNotif"></div>
 
             </div>
 
@@ -101,7 +122,6 @@
                 <textarea name="message_content" rows="6" class="form-control" id="message-Contact" placeholder="<?php echo $lang['callback-msg']; ?>"><?php echo isset($_POST['message_content']) ? $message_content : ''; ?></textarea>
 
               </fieldset>
-              <div class="messageNotif"></div>
 
             </div>
 
@@ -112,7 +132,7 @@
                 <button  id="submit" name="submit-msg" class="border-button form_submit_message"><?php echo $lang['callback-btn']; ?></button>
                 
               </fieldset>
-              <div class="submitNotif"></div>
+
               </form>
             </div>
 
