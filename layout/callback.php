@@ -2,6 +2,7 @@
 <?php 
   //Alerts variables
   $msg = "";
+  $msgData = "";
   $msgClass = "";
   $requestContact = $lang['mail-h1'];
   //checking for the submit 
@@ -11,6 +12,8 @@
     $adresse_email = htmlspecialchars($_POST["adresse_email"]);
     $message_subject = htmlspecialchars($_POST["message_subject"]);
     $message_content = htmlspecialchars($_POST["message_content"]);
+    $langues = $_SESSION["lang"];
+    $date_inscription = date("d-m-Y");
 
     // check required fields
     if(!empty($name) && !empty($adresse_email) && !empty($message_subject) && !empty($message_content)){
@@ -18,8 +21,7 @@
       if(filter_var($adresse_email, FILTER_VALIDATE_EMAIL)){
         //passed
         //Send mail variables 
-        // $toEmail = 'info@greenplanetcommunication.com';
-        $toEmail = 'masycharlar@gmail.com';
+        $toEmail = 'info@greenplanetcommunication.com';
         $subject = $message_subject;
         $mail_from = $lang['mail-title'];
         $body = '
@@ -38,11 +40,13 @@
           //passed
           $msg = $lang['msg-sent-success'];
           $msgClass = 'alert-success';
+    
         } else {
           //failed
           $msg = $lang['msg-sent-danger'];
           $msgClass = 'alert-danger';
         }
+        
         
       } else {
         //failed 
@@ -124,6 +128,9 @@
               </fieldset>
 
             </div>
+            <?php if($msgData != ""): ?>
+              <div class="alert <?php echo $msgClass ; ?>"> <?php echo $msgData ; ?></div>
+            <?php endif; ?>
 
             <div class="col-lg-12">
 
