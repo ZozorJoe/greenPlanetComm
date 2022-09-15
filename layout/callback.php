@@ -1,11 +1,10 @@
-<!-- Callback form -->
 <?php 
   //Alerts variables
   $msg = "";
-  $msgData = "";
+  // $msgData = "";
   $msgClass = "";
   $requestContact = $lang['mail-h1'];
-  //checking for the submit 
+  //checking for the submit   
   if(filter_has_var(INPUT_POST, 'submit-msg')){
     //get the form data
     $name = htmlspecialchars($_POST["nomComplete"]);
@@ -61,6 +60,8 @@
   }
 
 ?>
+
+<!-- Callback form -->
 <div class="callback-form">
 
 <div class="container">
@@ -83,7 +84,7 @@
 
       <div class="contact-form">
       <?php if($msg != ""): ?>
-        <div class="alert <?php echo $msgClass ; ?>"> <?php echo $msg ; ?></div>
+        <div class="alert <?php echo $msgClass ; ?>" id="alert"> <?php echo $msg ; ?></div>
       <?php endif; ?>
 
         <div id="contact">
@@ -123,20 +124,20 @@
 
               <fieldset>
 
-                <textarea name="message_content" rows="6" class="form-control" id="message-Contact" placeholder="<?php echo $lang['callback-msg']; ?>"><?php echo isset($_POST['message_content']) ? $message_content : ''; ?></textarea>
+                <textarea name="message_content" rows="6" class="form-control" id="message-contact" placeholder="<?php echo $lang['callback-msg']; ?>"><?php echo isset($_POST['message_content']) ? $message_content : ''; ?></textarea>
 
               </fieldset>
 
             </div>
-            <?php if($msgData != ""): ?>
-              <div class="alert <?php echo $msgClass ; ?>"> <?php echo $msgData ; ?></div>
-            <?php endif; ?>
+            <?php //if($msgData != ""): ?>
+              <!-- <div class="alert <?php //echo $msgClass ; ?>"> <?php //echo $msgData ; ?></div> -->
+            <?php //endif; ?>
 
             <div class="col-lg-12">
 
               <fieldset>
 
-                <button  id="submit" name="submit-msg" class="border-button form_submit_message"><?php echo $lang['callback-btn']; ?></button>
+                <button id="submit" name="submit-msg" class="border-button form_submit_message"><?php echo $lang['callback-btn']; ?></button>
                 
               </fieldset>
 
@@ -158,4 +159,6 @@
 </div>
 
 </div>
+
+
 

@@ -223,22 +223,22 @@ if(! cleared[t.id]){                      // function makes it static and global
   `);
       } else if(nom!="" && email!="" && message!=""){
         $.ajax({
-type: 'POST', // http method
-data: data,
-url:'controlleur/contact.php',
-success: function(response) {
-  console.log(response)
-  let result =JSON.parse(response)
-  $('#notification').html(`
-  <hr>
-  <span class="alert alert-success text-center" style="font-size: 1em;">${result.msg}</span>
-  <br>
-  `);
-  $('input[name="nom"]').val(null);
-$('input[name="emailadress"]').val(null);
-$("#messageContact").val(null);
-},
-})
+        type: 'POST', // http method
+        data: data,
+        url:'controlleur/contact.php',
+        success: function(response) {
+          console.log(response)
+          let result =JSON.parse(response)
+          $('#notification').html(`
+          <hr>
+          <span class="alert alert-success text-center" style="font-size: 1em;">${result.msg}</span>
+          <br>
+          `);
+          $('input[name="nom"]').val(null);
+        $('input[name="emailadress"]').val(null);
+        $("#messageContact").val(null);
+        },
+        })
       }
 
 
